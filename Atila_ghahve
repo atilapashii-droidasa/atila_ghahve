@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروشگاه قهوه آتیلا</title>
+  <style>
+    body { font-family: Tahoma, sans-serif; background-color: #f5f5f5; margin:0; padding:0; }
+    header { background-color: #4b2e2e; color: #fff; padding: 20px; text-align: center; }
+    nav { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
+    nav a { text-decoration: none; color: #4b2e2e; font-weight: bold; }
+    .container { width: 90%; max-width: 1000px; margin: auto; }
+    .products { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .product { background-color: #fff; padding: 15px; border-radius: 10px; width: 200px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .product img { width: 100%; border-radius: 10px; }
+    button { background-color: #4b2e2e; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+    button:hover { background-color: #6b3f3f; }
+    #cart { background-color: #fff; padding: 15px; border-radius: 10px; margin-top: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    #cart ul { list-style: none; padding: 0; }
+    footer { background-color: #4b2e2e; color: #fff; text-align: center; padding: 15px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>فروشگاه قهوه آتیلا</h1>
+</header>
+
+<nav>
+  <a href="#home">خانه</a>
+  <a href="#products">محصولات</a>
+  <a href="#cart">سبد خرید</a>
+  <a href="#about">درباره ما</a>
+  <a href="#contact">تماس با ما</a>
+</nav>
+
+<div class="container">
+
+  <section id="home">
+    <h2>به بهترین قهوه‌های دنیا خوش آمدید</h2>
+    <p>ما قهوه تازه و با کیفیت را مستقیم از مزارع برای شما می‌آوریم.</p>
+  </section>
+
+  <section id="products">
+    <h2>محصولات</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://via.placeholder.com/200x200.png?text=قهوه+1" alt="قهوه 1">
+        <h3>قهوه اسپرسو</h3>
+        <p>قیمت: 120000 تومان</p>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/200x200.png?text=قهوه+2" alt="قهوه 2">
+        <h3>قهوه ترک</h3>
+        <p>قیمت: 100000 تومان</p>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/200x200.png?text=قهوه+3" alt="قهوه 3">
+        <h3>قهوه فرانسه</h3>
+        <p>قیمت: 130000 تومان</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cart">
+    <h2>سبد خرید</h2>
+    <ul id="cart-items"></ul>
+    <p>جمع کل: <span id="total">0</span> تومان</p>
+  </section>
+
+  <section id="about">
+    <h2>درباره ما</h2>
+    <p>فروشگاه قهوه آتیلا با هدف ارائه بهترین قهوه‌های تازه و خوش طعم به شما عزیزان تاسیس شد.</p>
+  </section>
+
+  <section id="contact">
+    <h2>تماس با ما</h2>
+    <p>ایمیل: atila.coffee@example.com</p>
+    <p>تلفن: 09371091603</p>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2025 فروشگاه قهوه آتیلا</p>
+</footer>
+
+<script>
+  const products = document.querySelectorAll('.product');
+  const cartItems = document.getElementById('cart-items');
+  const totalElem = document.getElementById('total');
+  let total = 0;
+
+  products.forEach(product => {
+    const btn = document.createElement('button');
+    btn.textContent = "اضافه به سبد";
+    product.appendChild(btn);
+
+    btn.addEventListener('click', () => {
+      const name = product.querySelector('h3').textContent;
+      const priceText = product.querySelector('p').textContent.replace('قیمت: ', '').replace(' تومان', '');
+      const price = parseInt(priceText);
+
+      total += price;
+      totalElem.textContent = total;
+
+      const li = document.createElement('li');
+      li.textContent = `${name} - ${price} تومان`;
+      cartItems.appendChild(li);
+    });
+  });
+</script>
+
+</body>
+</html>
