@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>فروشگاه قهوه آتیلا</title>
+  <!-- کد تایید گوگل -->
+  <meta name="google-site-verification" content="ABCDEFG12345" />
   <style>
     body { font-family: Tahoma, sans-serif; background-color: #f5f5f5; margin:0; padding:0; }
     header { background-color: #4b2e2e; color: #fff; padding: 20px; text-align: center; }
@@ -19,7 +21,6 @@
     #cart ul { list-style: none; padding: 0; }
     footer { background-color: #4b2e2e; color: #fff; text-align: center; padding: 15px; margin-top: 30px; }
   </style>
-<meta name="google-site-verification" content="XcKM_7gqljDxDd6OLTDBlV1fHHO37xXaj_kIN1YULQk" />
 </head>
 <body>
 
